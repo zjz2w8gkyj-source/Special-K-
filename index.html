@@ -334,6 +334,138 @@
             color: #ffffff;
         }
 
+        /* HOVERBOARD DESIGN */
+.design-section {
+    text-align: center;
+}
+
+.design-section h2 {
+    margin-bottom: 10px;
+}
+
+.design-intro {
+    max-width: 750px;
+    margin: 0 auto 25px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.design-display {
+    width: 100%;
+    min-height: 500px;
+    border: 3px solid #000000;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.design-display img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    display: block;
+}
+
+.design-placeholder {
+    padding: 40px;
+    text-align: center;
+}
+
+.design-placeholder h3 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.design-placeholder p {
+    font-size: 14px;
+}
+
+
+/* STRUCTURAL & MECHANICAL FEATURES */
+.features-intro {
+    max-width: 750px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    border: 2px solid #000000;
+    padding: 25px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    background: #000000;
+    color: #ffffff;
+    transform: translateY(-5px);
+}
+
+.feature-number {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.feature-card:hover h3,
+.feature-card:hover p,
+.feature-card:hover .feature-number {
+    color: #ffffff;
+}
+
+
+/* MOBILE FEATURES */
+@media (max-width: 800px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .design-display {
+        min-height: 350px;
+    }
+
+    .design-display img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .design-display {
+        min-height: 250px;
+    }
+
+    .design-display img {
+        height: 250px;
+    }
+}
         /* FOOTER */
         footer {
             text-align: center;
@@ -426,6 +558,96 @@
         </section>
 
 
+        <!-- HOVERBOARD DESIGN -->
+        <section class="design-section">
+
+            <h2>🏄 Hoverboard Design</h2>
+
+            <p class="design-intro">
+                Explore the design and concept of our innovative hoverboard.
+                This section presents the main design of the hoverboard and
+                its overall structure.
+            </p>
+
+            <div class="design-display">
+
+                <img src="hoverboard-design.png" alt="Special K Hoverboard Design">
+
+            </div>
+
+        </section>
+
+
+        <!-- STRUCTURAL & MECHANICAL FEATURES -->
+        <section>
+
+            <h2>⚙️ Structural & Mechanical Features</h2>
+
+            <p class="features-intro">
+                An overview of the main structural and mechanical elements
+                incorporated into the Special K hoverboard design.
+            </p>
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <h3>Frame & Chassis</h3>
+                    <p>
+                        The main structural framework of the hoverboard,
+                        designed to support the components and overall load.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <h3>Propulsion System</h3>
+                    <p>
+                        The mechanical system responsible for generating
+                        the movement and thrust required by the hoverboard.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <h3>Power System</h3>
+                    <p>
+                        The power components that provide energy to the
+                        hoverboard's mechanical and electronic systems.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">04</div>
+                    <h3>Stability & Control</h3>
+                    <p>
+                        Components and systems designed to maintain stability
+                        and allow controlled operation of the hoverboard.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">05</div>
+                    <h3>Materials</h3>
+                    <p>
+                        Selected structural materials focused on balancing
+                        strength, durability and overall weight.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">06</div>
+                    <h3>Safety</h3>
+                    <p>
+                        Structural and mechanical considerations intended
+                        to improve reliability and user safety.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+        
         <!-- PROGRESS -->
         <section>
 
