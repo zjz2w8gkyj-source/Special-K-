@@ -210,25 +210,6 @@
         }
 
         /* PROGRESS CONTROL */
-        .progress-control {
-            margin-top: 20px;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .progress-control input {
-            flex: 1;
-            height: 35px;
-            border: 2px solid #000000;
-            border-radius: 0;
-            padding: 0 10px;
-            background: #ffffff;
-            color: #000000;
-            font-weight: bold;
-            font-size: 14px;
-            cursor: pointer;
-        }
 
         .progress-control input::-webkit-slider-thumb {
             appearance: none;
@@ -254,6 +235,21 @@
             color: #000000;
             letter-spacing: 1px;
         }
+        
+        /* VIEW-ONLY PROGRESS STATUS */
+.progress-status {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+}
+
+.progress-status .progress-label:last-child {
+    font-size: 18px;
+}
 
         /* VIDEOS */
         .videos {
@@ -669,17 +665,10 @@
                     Project at 0% completion. Update the progress below!
                 </p>
 
-                <div class="progress-control">
-                    <label class="progress-label">Set Progress:</label>
-                    <input 
-                        type="range" 
-                        id="progressSlider" 
-                        min="0" 
-                        max="100" 
-                        value="0"
-                    >
-                    <span class="progress-label" id="sliderValue">0%</span>
-                </div>
+              <div class="progress-status">
+    <span class="progress-label">Current project status:</span>
+    <span class="progress-label" id="sliderValue">0%</span>
+</div>
 
             </div>
 
@@ -744,27 +733,6 @@
 
         </section>
 
-
-        <!-- UPLOAD VIDEOS -->
-        <section>
-
-            <h2>➕ Add a New Video</h2>
-
-            <div class="upload-area">
-
-                <p>Select a video from your computer:</p>
-
-                <input
-                    type="file"
-                    id="videoUpload"
-                    accept="video/*"
-                    multiple
-                >
-
-            </div>
-
-        </section>
-
     </main>
 
 
@@ -775,33 +743,45 @@
 
     <script>
 
-        // PROGRESS BAR FUNCTIONALITY
-        const progressSlider = document.getElementById("progressSlider");
-        const progressBar = document.getElementById("progressBar");
-        const progressValue = document.getElementById("progressValue");
-        const progressText = document.getElementById("progressText");
-        const sliderValue = document.getElementById("sliderValue");
+// PROGRESS BAR
+// DEVELOPER: Change this number to update the project progress.
+const developerProgress = 50;
 
-        function updateProgress() {
-            const value = progressSlider.value;
-            progressBar.style.width = value + "%";
-            progressValue.textContent = value + "%";
-            sliderValue.textContent = value + "%";
+const progressBar = document.getElementById("progressBar");
+const progressValue = document.getElementById("progressValue");
+const progressText = document.getElementById("progressText");
+const sliderValue = document.getElementById("sliderValue");
 
-            if (value === "0") {
-                progressText.textContent = "Project at 0% completion. Let's get started!";
-            } else if (value < 25) {
-                progressText.textContent = "Just getting started! We're building momentum.";
-            } else if (value < 50) {
-                progressText.textContent = "Making good progress! We're halfway there.";
-            } else if (value < 75) {
-                progressText.textContent = "More than halfway done! We're on track.";
-            } else if (value < 100) {
-                progressText.textContent = "Almost there! Final stretch ahead.";
-            } else {
-                progressText.textContent = "🎉 Project Complete! Amazing work, Special K!";
-            }
-        }
+function updateProgress() {
+
+    const value = developerProgress;
+
+    progressBar.style.width = value + "%";
+    progressValue.textContent = value + "%";
+    sliderValue.textContent = value + "%";
+
+    if (value === 0) {
+        progressText.textContent =
+            "Project at 0% completion. Let's get started!";
+    } else if (value < 25) {
+        progressText.textContent =
+            "Just getting started! We're building momentum.";
+    } else if (value < 50) {
+        progressText.textContent =
+            "Making good progress! We're halfway there.";
+    } else if (value < 75) {
+        progressText.textContent =
+            "More than halfway done! We're on track.";
+    } else if (value < 100) {
+        progressText.textContent =
+            "Almost there! Final stretch ahead.";
+    } else {
+        progressText.textContent =
+            "🎉 Project Complete! Amazing work, Special K!";
+    }
+}
+
+updateProgress();
 
         progressSlider.addEventListener("input", updateProgress);
 
