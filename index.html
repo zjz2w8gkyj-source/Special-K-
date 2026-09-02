@@ -30,21 +30,22 @@
             border-bottom: 3px solid #000000;
         }
 
-        .logo {
-            width: 120px;
-            height: 120px;
-            background: #ffffff;
-            color: #000000;
-            border-radius: 0;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            font-weight: bold;
-            font-family: 'Archivo Black', sans-serif;
-            border: 3px solid #000000;
-        }
+.logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
 
         header h1 {
             font-size: 48px;
